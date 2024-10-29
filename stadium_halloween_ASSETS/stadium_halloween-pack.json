@@ -1,0 +1,24 @@
+{
+    "section1": {
+        "files": [
+            {
+                "type": "multiatlas",
+                "url": "assets/media/rooms/stadium_halloween/stadium_halloween.json",
+                "path": "assets/media/rooms/stadium_halloween",
+                "key": "stadium_halloween"
+            },
+            {
+                "url": "assets/media/rooms/stadium_halloween/stadium_halloween-physics.json",
+                "type": "json",
+                "key": "stadium_halloween-physics"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
