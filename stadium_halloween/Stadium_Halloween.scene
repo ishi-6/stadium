@@ -63,6 +63,19 @@
             "y": 718
         },
         {
+            "type": "Sprite",
+            "id": "aba1d302-5497-4556-9166-62b3e3a8febb",
+            "label": "door2",
+            "scope": "CLASS",
+            "texture": {
+                "key": "stadium_halloween",
+                "frame": "door2open0015"
+            },
+            "x": 1259,
+            "y": 662,
+            "flipX": true
+        },
+        {
             "type": "Image",
             "id": "5e77c2a7-af10-40de-8ae2-a49ab8b73817",
             "label": "houseR",
@@ -72,18 +85,6 @@
             },
             "x": 1329,
             "y": 574,
-            "flipX": true
-        },
-        {
-            "type": "Sprite",
-            "id": "db4eb316-3b2e-408c-9311-76cbf2646f36",
-            "label": "door2",
-            "texture": {
-                "key": "stadium_halloween",
-                "frame": "door2"
-            },
-            "x": 1265,
-            "y": 634,
             "flipX": true
         },
         {
@@ -110,14 +111,15 @@
         },
         {
             "type": "Sprite",
-            "id": "dabed6c1-075a-45bc-8d18-8e23eba4c18d",
+            "id": "46440cab-9cdc-4f0e-a827-608758882e07",
             "label": "door3",
+            "scope": "CLASS",
             "texture": {
                 "key": "stadium_halloween",
-                "frame": "door3"
+                "frame": "door3open0010"
             },
-            "x": 882,
-            "y": 269,
+            "x": 864,
+            "y": 296,
             "flipX": true
         },
         {
@@ -177,26 +179,16 @@
         },
         {
             "type": "Sprite",
-            "id": "6318ddf3-973c-4d03-9842-5dc11757e13c",
+            "id": "6e74da0a-e020-481c-ba09-c5e880f63580",
             "label": "door1",
+            "scope": "CLASS",
             "texture": {
                 "key": "stadium_halloween",
-                "frame": "door1"
+                "frame": "door1open0010"
             },
-            "x": 308,
-            "y": 667,
+            "x": 331,
+            "y": 705,
             "flipX": true
-        },
-        {
-            "type": "Image",
-            "id": "d89d9cf3-1bf3-4cfd-af6f-eceb2eeeb0ea",
-            "label": "vignette",
-            "texture": {
-                "key": "stadium_halloween",
-                "frame": "vignette"
-            },
-            "originX": 0,
-            "originY": 0
         },
         {
             "type": "Image",
@@ -257,6 +249,17 @@
             "y": 129
         },
         {
+            "type": "Image",
+            "id": "d89d9cf3-1bf3-4cfd-af6f-eceb2eeeb0ea",
+            "label": "vignette",
+            "texture": {
+                "key": "stadium_halloween",
+                "frame": "vignette"
+            },
+            "originX": 0,
+            "originY": 0
+        },
+        {
             "type": "Container",
             "id": "f76b895d-434f-4d31-9581-3affa3e5b738",
             "label": "container_2",
@@ -268,40 +271,11 @@
                     "id": "fe8b876b-9d07-43b7-8ae6-92ac39fd5f6d",
                     "label": "commonCandyCountdown",
                     "scope": "CLASS",
-                    "x": 1532,
-                    "y": -215,
+                    "x": 1594,
+                    "y": 201,
                     "angle": -8,
                     "originX": 0.5,
-                    "originY": 0.5,
-                    "paddingLeft": 10,
-                    "paddingRight": 10,
-                    "align": "center",
-                    "fontFamily": "cplcd",
-                    "fontSize": "40px",
-                    "fontStyle": "bold",
-                    "color": "#ffffffff"
-                }
-            ]
-        },
-        {
-            "type": "Container",
-            "id": "c09962c2-4db4-4f29-a165-2cc094b52894",
-            "label": "container_1",
-            "x": -240,
-            "y": 676,
-            "list": [
-                {
-                    "type": "Text",
-                    "id": "d70a007d-2790-4782-a242-e9e13d44226d",
-                    "label": "uncommonCandyCountdown",
-                    "scope": "CLASS",
-                    "x": 1500,
-                    "y": -205,
-                    "scaleX": 1.0069619778109853,
-                    "scaleY": 1.0207847568906478,
-                    "angle": 6.000000000000001,
-                    "originX": 0.5,
-                    "originY": 0.5,
+                    "originY": 10,
                     "paddingLeft": 10,
                     "paddingRight": 10,
                     "align": "center",
@@ -316,18 +290,18 @@
             "type": "Container",
             "id": "61be51fd-5e9f-4a4b-8d8d-3666ee8aafe1",
             "label": "container_3",
-            "x": -512,
-            "y": 332,
+            "x": 31,
+            "y": 249,
             "list": [
                 {
                     "type": "Text",
                     "id": "7f21c263-f8b0-46cf-b0bd-6282472c7fc2",
                     "label": "rareCandyCountdown",
                     "scope": "CLASS",
-                    "x": 1394,
-                    "y": -205,
+                    "x": 845,
+                    "y": 295,
                     "originX": 0.5,
-                    "originY": 0.5,
+                    "originY": 10,
                     "paddingLeft": 10,
                     "paddingRight": 10,
                     "align": "center",
@@ -374,8 +348,8 @@
                         "SimpleButton"
                     ],
                     "SimpleButton.callback": "() => this.trickOrTreat(\"common\");",
-                    "x": 838,
-                    "y": -320,
+                    "x": 859,
+                    "y": -338,
                     "scaleX": 1.2512969071892455,
                     "scaleY": 1.2512969071892455,
                     "originX": 0.49078587617689595,
@@ -406,6 +380,35 @@
                     "height": 128
                 }
             ]
+        },
+        {
+            "type": "Container",
+            "id": "c09962c2-4db4-4f29-a165-2cc094b52894",
+            "label": "container_1",
+            "x": 31,
+            "y": 617,
+            "list": [
+                {
+                    "type": "Text",
+                    "id": "d70a007d-2790-4782-a242-e9e13d44226d",
+                    "label": "uncommonCandyCountdown",
+                    "scope": "CLASS",
+                    "x": 1177,
+                    "y": 271,
+                    "scaleX": 1.0069619778109853,
+                    "scaleY": 1.0207847568906478,
+                    "angle": 6.000000000000001,
+                    "originX": 0.5,
+                    "originY": 10,
+                    "paddingLeft": 10,
+                    "paddingRight": 10,
+                    "align": "center",
+                    "fontFamily": "cplcd",
+                    "fontSize": "40px",
+                    "fontStyle": "bold",
+                    "color": "#ffffffff"
+                }
+            ]
         }
     ],
     "plainObjects": [],
@@ -425,12 +428,7 @@
                 "61be51fd-5e9f-4a4b-8d8d-3666ee8aafe1",
                 "33fa3865-ea3d-4ac3-820a-376ead144e27",
                 "b7ea3a3a-505d-42c5-a02e-8f5d9cec1073",
-                "b780661c-cc14-47b7-a316-3bf01ce4ce41",
-                "1ea49f06-432a-4952-9abf-8f5ecdddb9e8",
-                "5e77c2a7-af10-40de-8ae2-a49ab8b73817",
-                "983dc349-a217-428c-85eb-0f122c11370f",
-                "43cacd76-00a7-4085-a4c9-feb21dff13a0",
-                "b1e7210e-dd19-42d5-90c1-29bed2d29bad"
+                "1ea49f06-432a-4952-9abf-8f5ecdddb9e8"
             ]
         }
     ]

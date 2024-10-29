@@ -11,10 +11,14 @@ export default class Stadium_Halloween extends RoomScene {
     constructor() {
         super("Stadium_Halloween");
 
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.door2;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.door3;
+        /** @type {Phaser.GameObjects.Sprite} */
+        this.door1;
         /** @type {Phaser.GameObjects.Text} */
         this.commonCandyCountdown;
-        /** @type {Phaser.GameObjects.Text} */
-        this.uncommonCandyCountdown;
         /** @type {Phaser.GameObjects.Text} */
         this.rareCandyCountdown;
         /** @type {Phaser.GameObjects.Ellipse} */
@@ -23,6 +27,8 @@ export default class Stadium_Halloween extends RoomScene {
         this.commonDoorBell;
         /** @type {Phaser.GameObjects.Ellipse} */
         this.rareDoorBell;
+        /** @type {Phaser.GameObjects.Text} */
+        this.uncommonCandyCountdown;
         /** @type {Array<Phaser.GameObjects.Container|Phaser.GameObjects.Image>} */
         this.sort;
 
@@ -64,13 +70,13 @@ export default class Stadium_Halloween extends RoomScene {
         // fenceR_1
         this.add.image(1077, 718, "stadium_halloween", "fenceR_1");
 
+        // door2
+        const door2 = this.add.sprite(1259, 662, "stadium_halloween", "door2open0015");
+        door2.flipX = true;
+
         // houseR
         const houseR = this.add.image(1329, 574, "stadium_halloween", "houseR");
         houseR.flipX = true;
-
-        // door2
-        const door2 = this.add.sprite(1265, 634, "stadium_halloween", "door2");
-        door2.flipX = true;
 
         // fenceR_2
         const fenceR_2 = this.add.image(1362, 904, "stadium_halloween", "fenceR_2");
@@ -79,7 +85,7 @@ export default class Stadium_Halloween extends RoomScene {
         this.add.image(712, 871, "stadium_halloween", "fog");
 
         // door3
-        const door3 = this.add.sprite(882, 269, "stadium_halloween", "door3");
+        const door3 = this.add.sprite(864, 296, "stadium_halloween", "door3open0010");
         door3.flipX = true;
 
         // houseU
@@ -98,12 +104,8 @@ export default class Stadium_Halloween extends RoomScene {
         this.add.image(251, 356, "stadium_halloween", "fogL");
 
         // door1
-        const door1 = this.add.sprite(308, 667, "stadium_halloween", "door1");
+        const door1 = this.add.sprite(331, 705, "stadium_halloween", "door1open0010");
         door1.flipX = true;
-
-        // vignette
-        const vignette = this.add.image(0, 0, "stadium_halloween", "vignette");
-        vignette.setOrigin(0, 0);
 
         // houseL
         const houseL = this.add.image(222, 618, "stadium_halloween", "houseL");
@@ -121,38 +123,29 @@ export default class Stadium_Halloween extends RoomScene {
         uncommonCandyTimer.setOrigin(0.5, 1.5);
 
         // rareCandyTimer
-        const rareCandyTimer = this.add.image(887, 129, "stadium_halloween", "rareCandyCountdown");
+        this.add.image(887, 129, "stadium_halloween", "rareCandyCountdown");
+
+        // vignette
+        const vignette = this.add.image(0, 0, "stadium_halloween", "vignette");
+        vignette.setOrigin(0, 0);
 
         // container_2
         const container_2 = this.add.container(-1241, 713);
 
         // commonCandyCountdown
-        const commonCandyCountdown = this.add.text(1532, -215, "", {});
+        const commonCandyCountdown = this.add.text(1594, 201, "", {});
         commonCandyCountdown.angle = -8;
-        commonCandyCountdown.setOrigin(0.5, 0.5);
+        commonCandyCountdown.setOrigin(0.5, 10);
         commonCandyCountdown.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "cplcd", "fontSize": "40px", "fontStyle": "bold" });
         commonCandyCountdown.setPadding({"left":10,"right":10});
         container_2.add(commonCandyCountdown);
 
-        // container_1
-        const container_1 = this.add.container(-240, 676);
-
-        // uncommonCandyCountdown
-        const uncommonCandyCountdown = this.add.text(1500, -205, "", {});
-        uncommonCandyCountdown.scaleX = 1.0069619778109853;
-        uncommonCandyCountdown.scaleY = 1.0207847568906478;
-        uncommonCandyCountdown.angle = 6.000000000000001;
-        uncommonCandyCountdown.setOrigin(0.5, 0.5);
-        uncommonCandyCountdown.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "cplcd", "fontSize": "40px", "fontStyle": "bold" });
-        uncommonCandyCountdown.setPadding({"left":10,"right":10});
-        container_1.add(uncommonCandyCountdown);
-
         // container_3
-        const container_3 = this.add.container(-512, 332);
+        const container_3 = this.add.container(31, 249);
 
         // rareCandyCountdown
-        const rareCandyCountdown = this.add.text(1394, -205, "", {});
-        rareCandyCountdown.setOrigin(0.5, 0.5);
+        const rareCandyCountdown = this.add.text(845, 295, "", {});
+        rareCandyCountdown.setOrigin(0.5, 10);
         rareCandyCountdown.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "cplcd", "fontSize": "40px", "fontStyle": "bold" });
         rareCandyCountdown.setPadding({"left":10,"right":10});
         container_3.add(rareCandyCountdown);
@@ -170,7 +163,7 @@ export default class Stadium_Halloween extends RoomScene {
         container_4.add(uncommonDoorBell);
 
         // commonDoorBell
-        const commonDoorBell = this.add.ellipse(838, -320, 128, 128);
+        const commonDoorBell = this.add.ellipse(859, -338, 128, 128);
         commonDoorBell.scaleX = 1.2512969071892455;
         commonDoorBell.scaleY = 1.2512969071892455;
         commonDoorBell.setOrigin(0.49078587617689595, 0.9607061911551957);
@@ -187,8 +180,21 @@ export default class Stadium_Halloween extends RoomScene {
         rareDoorBell.fillColor = 7062123;
         container_4.add(rareDoorBell);
 
+        // container_1
+        const container_1 = this.add.container(31, 617);
+
+        // uncommonCandyCountdown
+        const uncommonCandyCountdown = this.add.text(1177, 271, "", {});
+        uncommonCandyCountdown.scaleX = 1.0069619778109853;
+        uncommonCandyCountdown.scaleY = 1.0207847568906478;
+        uncommonCandyCountdown.angle = 6.000000000000001;
+        uncommonCandyCountdown.setOrigin(0.5, 10);
+        uncommonCandyCountdown.setStyle({ "align": "center", "color": "#ffffffff", "fontFamily": "cplcd", "fontSize": "40px", "fontStyle": "bold" });
+        uncommonCandyCountdown.setPadding({"left":10,"right":10});
+        container_1.add(uncommonCandyCountdown);
+
         // lists
-        const sort = [container_1, container_2, container_3, container_4, fenceL_1, houseL, fenceR_2, houseR, rareCandyTimer, uncommonCandyTimer, commonCandyTimer];
+        const sort = [container_1, container_2, container_3, container_4, fenceL_1, fenceR_2];
 
         // uncommonDoorBell (components)
         const uncommonDoorBellSimpleButton = new SimpleButton(uncommonDoorBell);
@@ -202,12 +208,15 @@ export default class Stadium_Halloween extends RoomScene {
         const rareDoorBellSimpleButton = new SimpleButton(rareDoorBell);
         rareDoorBellSimpleButton.callback = () => this.trickOrTreat("rare");;
 
+        this.door2 = door2;
+        this.door3 = door3;
+        this.door1 = door1;
         this.commonCandyCountdown = commonCandyCountdown;
-        this.uncommonCandyCountdown = uncommonCandyCountdown;
         this.rareCandyCountdown = rareCandyCountdown;
         this.uncommonDoorBell = uncommonDoorBell;
         this.commonDoorBell = commonDoorBell;
         this.rareDoorBell = rareDoorBell;
+        this.uncommonCandyCountdown = uncommonCandyCountdown;
         this.sort = sort;
 
         this.events.emit("scene-awake");
@@ -221,12 +230,12 @@ export default class Stadium_Halloween extends RoomScene {
 
         this.world.MusicController.addSfx("thunder2", true)
 
-        this.bounds = this.hitbox.getBounds()
+       // this.bounds = this.hitbox.getBounds()
 
      //   this.tower.on('animationcomplete', () => this.onTowerAnimComplete())
 
 
-        /*
+
         this.commonCandyInterval = setInterval(() => this.updateCountdownTexts("common"), 1000)
         this.uncommonCandyInterval = setInterval(() => this.updateCountdownTexts("uncommon"), 1000)
         this.rareCandyInterval = setInterval(() => this.updateCountdownTexts("rare"), 1000)
@@ -235,9 +244,9 @@ export default class Stadium_Halloween extends RoomScene {
         this.commonCandyZone = this.addCandyBody('houseL')
         this.uncommonCandyZone = this.addCandyBody('houseR')
         this.rareCandyZone = this.addCandyBody('houseU')
-        */
 
-     //   this.setClockTime()
+
+         //  this.setClockTime()
 
 
         if (localStorage.getItem("trickTutorial")) {
@@ -332,21 +341,21 @@ export default class Stadium_Halloween extends RoomScene {
                 this.addCandy(candyType)
                 this.commonDoorBell.visible = false
                 this.world.MusicController.playSfx("door", false)
-                this.door2.setFrame("door2open0080")
+                this.door1.setFrame("door1open0001")
                 this.interface.main.toggleCommonCandy()
                 return
             } else if (candyType == 'uncommon' && this.uncommonCandyZone.contains(this.world.client.penguin.x, this.world.client.penguin.y)) {
                 this.addCandy(candyType)
                 this.uncommonDoorBell.visible = false   
                 this.world.MusicController.playSfx("door", false)
-                this.door3.setFrame("door3open0075");
+                this.door2.setFrame("door2open0001");
                 this.interface.main.toggleRareCandy()
                 return
             } else if (candyType == 'rare' && this.rareCandyZone.contains(this.world.client.penguin.x, this.world.client.penguin.y)) {
                 this.addCandy(candyType)
                 this.rareDoorBell.visible = false
                 this.world.MusicController.playSfx("door", false)
-                this.door1.setFrame("door1open0065");
+                this.door3.setFrame("door3open0001");
                 this.interface.main.toggleEpicCandy()
                 return
         } else {
@@ -371,27 +380,27 @@ export default class Stadium_Halloween extends RoomScene {
     setDoorbellVisibility() {
         var candytime = DateTime.now().setZone('America/Los_Angeles')
         if ((candytime.second <= 34 && candytime.second >=30) || candytime.second <= 4) {
-            this.door2.setFrame("door2open0050");
+            this.door1.setFrame("door1open0001");
             this.commonDoorBell.visible = true
             this.world.MusicController.playSfx("commonbell", false)
         } else {
-            this.door2.setFrame("door2open0001");
+            this.door1.setFrame("door1open0010");
             this.commonDoorBell.visible = false
         }
         if (candytime.minute % 2 == 0 && candytime.second <= 4) {
             this.uncommonDoorBell.visible = true
-            this.door3.setFrame("door3open0052");
+            this.door2.setFrame("door2open0001");
             this.world.MusicController.playSfx("rarebell", false)
         } else {
-            this.door3.setFrame("door3open0001");
+            this.door2.setFrame("door2open0015");
             this.uncommonDoorBell.visible = false
         }
         if (candytime.minute % 5 == 0 && candytime.second <= 4) {
             this.world.MusicController.playSfx("epicbell", false)
-            this.door1.setFrame("door1open0045");
+            this.door3.setFrame("door3open0001");
             this.rareDoorBell.visible = true
         } else {
-            this.door1.setFrame("door1open0001");
+            this.door3.setFrame("door3open0010");
             this.rareDoorBell.visible = false
         }
     }
