@@ -29,7 +29,7 @@ export default class Stadium_Halloween extends RoomScene {
         this.rareDoorBell;
         /** @type {Phaser.GameObjects.Text} */
         this.uncommonCandyCountdown;
-        /** @type {Array<Phaser.GameObjects.Container|Phaser.GameObjects.Image>} */
+        /** @type {Array<Phaser.GameObjects.Container|Phaser.GameObjects.Image|Phaser.GameObjects.Ellipse>} */
         this.sort;
 
 
@@ -194,7 +194,7 @@ export default class Stadium_Halloween extends RoomScene {
         container_1.add(uncommonCandyCountdown);
 
         // lists
-        const sort = [container_1, container_2, container_3, container_4, fenceL_1, fenceR_2];
+        const sort = [container_1, container_2, container_3, container_4, fenceL_1, fenceR_2, commonDoorBell, rareDoorBell, uncommonDoorBell];
 
         // uncommonDoorBell (components)
         const uncommonDoorBellSimpleButton = new SimpleButton(uncommonDoorBell);
